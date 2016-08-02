@@ -1,6 +1,9 @@
 import React from 'react';
 import Radium from 'radium';
+import { Link } from 'react-router';
 import * as constants from '../constants';
+
+const StyledLink = Radium(Link);
 
 const style = {
   backgroundColor: constants.COLORS.BRAND,
@@ -14,7 +17,7 @@ const style = {
 };
 
 const Tag = ({ text }) => (
-  <a href="#" style={style}>{text}</a>
+  <StyledLink to={`/play/${text}`} style={style}>{text}</StyledLink>
 );
 
 export default Radium(Tag);
