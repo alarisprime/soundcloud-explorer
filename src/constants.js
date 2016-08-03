@@ -8,3 +8,5 @@ export const COLORS = {
   BRAND_SECONDARY: 'rgb(118, 207, 169)',
   TEXT_INVERTED: 'rgb(255, 255, 255)'
 };
+
+export const SOUNDCLOUD_CLIENT_ID = '59c5cebbfecc10e5c872b3fd0d370eb1';
