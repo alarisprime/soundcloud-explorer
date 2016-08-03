@@ -10,6 +10,7 @@ const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next
   <div>
     <TopBar genre={genre} />
     <h1>album art goes here</h1>
+    {nowPlaying === -1 ? null : <img src={tracks[nowPlaying].artwork_url} alt={tracks[nowPlaying].description}/>}
     <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} />
     <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} />
   </div>
