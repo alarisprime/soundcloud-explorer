@@ -1,7 +1,7 @@
 import React from 'react';
 import TagCloud from '../components/TagCloud';
 
-const GENRES = ['hip-hop', 'funk', 'pop', 'indie', 'garage', 'punk', 'electronic', 'metal', 'emo', 'jazz', 'r&b'];
+const GENRES = ['hip-hop', 'funk', 'grime', 'pop', 'indie', 'garage', 'punk', 'electronic', 'metal', 'emo', 'jazz', 'r&b'];
 
 const GenreSelector = ({text}) => (
   <div>
