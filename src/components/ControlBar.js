@@ -8,6 +8,7 @@ const STYLE = {
   flexDirection: 'row',
   flexWrap: 'nowrap',
   justifyContent: 'center',
+  marginBottom: `${constants.LINE_HEIGHT}px`,
   '.button': {
     fontSize: '100px'
   }

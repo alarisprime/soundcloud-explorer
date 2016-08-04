@@ -4,6 +4,8 @@ import * as constants from '../constants';
 
 const style = {
   margin: '0 auto',
+  paddingRight: `${constants.LINE_HEIGHT / 2}px`,
+  paddingLeft: `${constants.LINE_HEIGHT / 2}px`,
   maxWidth: constants.MAX_COLUMN_WIDTH
 };
 

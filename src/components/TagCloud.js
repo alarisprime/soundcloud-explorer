@@ -8,7 +8,7 @@ const STYLE = {
   padding: `${constants.LINE_HEIGHT / 2}px`,
   marginBottom: `${constants.LINE_HEIGHT}px`,
   textAlign: 'center',
-  borderRadius: `${constants.BOX_RADIUS}px`,
+  borderRadius: `${constants.BORDER_RADIUS}px`,
   boxShadow: constants.BASE_SHADOW
 };
 

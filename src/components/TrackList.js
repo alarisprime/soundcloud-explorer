@@ -2,10 +2,14 @@ import React from 'react';
 import Radium from 'radium';
 import Track from './Track';
 
+import * as constants from '../constants';
+
 const STYLE = {
-  listStyle: 'none',
-  margin: 0,
-  padding: 0
+  backgroundColor: constants.COLORS.HIGHTLIGHT,
+  padding: `0 ${constants.LINE_HEIGHT / 2}px`,
+  marginBottom: `${constants.LINE_HEIGHT}px`,
+  borderRadius: `${constants.BORDER_RADIUS}px`,
+  boxShadow: constants.BASE_SHADOW
 };
 
 const TrackList = ({ tracks, nowPlaying, togglePlay, loading }) => {
@@ -13,11 +17,15 @@ const TrackList = ({ tracks, nowPlaying, togglePlay, loading }) => {
     return <p>Loading...</p>;
   } else {
     return (
-      <ul style={STYLE}>
-        {tracks.map((track, index) =>
-          <Track track={track} isPlaying={index === nowPlaying} onClick={() => togglePlay(index)} key={index}/>
+      <div style={STYLE}>
+        {tracks.map((track, index, arr) =>
+          <Track
+            track={track}
+            isPlaying={index === nowPlaying}
+            isLast={index === arr.length - 1}
+            onClick={() => togglePlay(index)} key={index}/>
         )}
-      </ul>
+      </div>
     );
   }
 };
