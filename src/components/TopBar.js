@@ -7,8 +7,10 @@ import * as constants from '../constants';
 const StyledLink = Radium(Link);
 
 const STYLE = {
+  marginBottom: `${constants.LINE_HEIGHT}px`,
   backgroundColor: constants.COLORS.BRAND,
-  color: constants.COLORS.TEXT_REVERSE
+  color: constants.COLORS.TEXT_REVERSE,
+  boxShadow: `0 2px ${constants.COLORS.SHADOW}`
 };
 
 const TITLE_STYLE = {
