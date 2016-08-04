@@ -21,7 +21,18 @@ const BUTTON_STYLE = {
   width: `${100 / 3}%`,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  cursor: 'pointer',
+
+  ':hover': {
+    color: constants.COLORS.BRAND_HOVER
+  },
+  ':active': {
+    color: constants.COLORS.BRAND_HOVER
+  },
+  ':focus': {
+    color: constants.COLORS.BRAND_HOVER
+  }
 };
 
 const LAST_BUTTON_STYLE = {
@@ -30,9 +41,18 @@ const LAST_BUTTON_STYLE = {
 
 const ControlBar = ({ togglePlay, previous, next, isPaused }) => (
   <div style={STYLE}>
-    <button style={BUTTON_STYLE} onClick={previous}>Previous</button>
-    <button style={BUTTON_STYLE} onClick={togglePlay}>{isPaused ? 'Play' : 'Pause'}</button>
-    <button style={[BUTTON_STYLE, LAST_BUTTON_STYLE]} onClick={next}>Next</button>
+    <button
+      style={BUTTON_STYLE}
+      key="control-bar-prev"
+      onClick={previous}>Previous</button>
+    <button
+      style={BUTTON_STYLE}
+      key="control-bar-toggle-play"
+      onClick={togglePlay}>{isPaused ? 'Play' : 'Pause'}</button>
+    <button
+      key="control-bar-next"
+      style={[BUTTON_STYLE, LAST_BUTTON_STYLE]}
+      onClick={next}>Next</button>
   </div>
 );
 
