@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router';
+import SvgIcon from './SvgIcon';
 import * as constants from '../constants';
 import back from '../icons/back.svg';
 
@@ -33,7 +34,6 @@ const ICON_STYLE = {
 const TopBar = ({ genre }) => (
   <div style={STYLE}>
     <StyledLink to="/" style={LINK_STYLE}>
-      <img src={back} style={ICON_STYLE} alt="back" />
       <span>home</span>
     </StyledLink>
     <span style={GENRE_STYLE}>{genre}</span>
