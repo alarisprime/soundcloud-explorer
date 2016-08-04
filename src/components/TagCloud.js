@@ -4,24 +4,26 @@ import Tag from './Tag';
 import * as constants from '../constants';
 
 const STYLE = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap'
+  backgroundColor: constants.COLORS.HIGHTLIGHT,
+  padding: `${constants.LINE_HEIGHT / 2}px`,
+  margin: `${constants.LINE_HEIGHT}px`,
+  textAlign: 'center',
+  borderRadius: `${constants.BOX_RADIUS}px`,
+  boxShadow: constants.BASE_SHADOW
 };
 
-const TAG_MARGIN = constants.FONT_SIZE / (3 * constants.SIZING_RATIO);
+const TITLE_STYLE = {
+  display: 'block',
+  fontSize: constants.FONT_SIZE,
+  fontWeight: 'bold',
+  margin: `0 0 ${constants.LINE_HEIGHT / 2}px 0`
+}
 
-const TAG_CLOUD_STYLE = {
-  margin: TAG_MARGIN,
-  // lineHeight: constants.LINE_HEIGHT * constants.SIZING_RATIO
-};
-
-const TagCloud = ({ tags }) => (
+const TagCloud = ({ title, tags }) => (
   <div style={STYLE}>
-    {tags.map(tag =>
-      <span style={TAG_CLOUD_STYLE} key={tag}>
-        <Tag text={tag} id={tag} />
-      </span>
+    {title ? (<h2 style={TITLE_STYLE}>{title}</h2>) : undefined}
+    {tags.map((tag, i) =>
+      <Tag text={tag} key={tag} />
     )}
   </div>
 );

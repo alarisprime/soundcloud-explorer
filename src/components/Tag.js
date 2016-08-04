@@ -7,13 +7,18 @@ import * as constants from '../constants';
 const StyledLink = Radium(Link);
 
 const style = {
+  display: 'inline-block',
   backgroundColor: constants.COLORS.BRAND,
-  color: constants.COLORS.TEXT,
-  padding: constants.FONT_SIZE / constants.SIZING_RATIO,
+  color: constants.COLORS.TEXT_REVERSE,
+  padding: `${(constants.LINE_HEIGHT / 8) - 1}px ${constants.LINE_HEIGHT / 2}px ${(constants.LINE_HEIGHT / 8) + 1}px`,
+  marginBottom: `${constants.LINE_HEIGHT / 2}px`,
+  marginRight: `${constants.LINE_HEIGHT / 8}px`,
+  marginLeft: `${constants.LINE_HEIGHT / 8}px`,
+  borderRadius: '2000px', // that's a magic number
 
-  // ':hover': {
-  //   backgroundColor: constants.COLORS.BRAND_SECONDARY
-  // }
+  ':hover': {
+    backgroundColor: constants.COLORS.BRAND_HOVER
+  }
 };
 
 const Tag = ({ text }) => (

@@ -10,7 +10,7 @@ const STYLE = {
   marginBottom: `${constants.LINE_HEIGHT}px`,
   backgroundColor: constants.COLORS.BRAND,
   color: constants.COLORS.TEXT_REVERSE,
-  boxShadow: `0 2px ${constants.COLORS.SHADOW}`
+  boxShadow: constants.BASE_SHADOW
 };
 
 const TITLE_STYLE = {
