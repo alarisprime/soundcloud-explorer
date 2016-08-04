@@ -15,7 +15,7 @@ const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next
     <TopBar genre={genre} />
     <AlbumArt track={tracks[nowPlaying]} />
     <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} isPaused={isPaused} />
-    <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} />
+    <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} loading={loading} />
   </div>
 );
 

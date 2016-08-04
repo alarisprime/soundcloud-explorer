@@ -60,9 +60,7 @@ class SoundCloudPlayerContainer extends Component {
     // Play the track and add an event handler that updates the state as soon as the track
     // starts playing.
     trackToPlay.howl.play();
-    trackToPlay.howl.on('play', () => {
-      this.setState({ nowPlaying: indexToPlay, isPaused: false });
-    });
+    this.setState({ nowPlaying: indexToPlay, isPaused: false });
   }
 
   stop() {
@@ -91,7 +89,6 @@ class SoundCloudPlayerContainer extends Component {
     })
       .then(tracks => {
         this.setState({ loading: false, tracks: tracks });
-        // this.togglePlay(0);
       });
   }
 

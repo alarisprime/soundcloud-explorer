@@ -8,13 +8,19 @@ const STYLE = {
   padding: 0
 };
 
-const TrackList = ({ tracks, nowPlaying, togglePlay }) => (
-  <ul style={STYLE}>
-    {tracks.map((track, index) =>
-      <Track track={track} isPlaying={index === nowPlaying}  onClick={() => togglePlay(index)} key={index} />
-    )}
-  </ul>
-);
+const TrackList = ({ tracks, nowPlaying, togglePlay, loading }) => {
+  if (loading) {
+    return <p>Loading...</p>;
+  } else {
+    return (
+      <ul style={STYLE}>
+        {tracks.map((track, index) =>
+          <Track track={track} isPlaying={index === nowPlaying} onClick={() => togglePlay(index)} key={index}/>
+        )}
+      </ul>
+    );
+  }
+};
 
 // eslint-disable-next-line new-cap
 export default Radium(TrackList);
