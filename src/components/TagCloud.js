@@ -6,7 +6,7 @@ import * as constants from '../constants';
 const STYLE = {
   backgroundColor: constants.COLORS.HIGHTLIGHT,
   padding: `${constants.LINE_HEIGHT / 2}px`,
-  margin: `${constants.LINE_HEIGHT}px`,
+  marginBottom: `${constants.LINE_HEIGHT}px`,
   textAlign: 'center',
   borderRadius: `${constants.BOX_RADIUS}px`,
   boxShadow: constants.BASE_SHADOW

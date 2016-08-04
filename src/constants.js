@@ -2,7 +2,8 @@ export const FONT_FAMILY = '-apple-system, BlinkMacSystemFont, "Segoe UI", Robot
 export const FONT_SIZE = 16; // px
 export const LINE_HEIGHT = 24; // px
 export const SIZING_RATIO = 1.5; // perfect-fifth
-export const BOX_RADIUS = 3; // perfect-fifth
+export const BOX_RADIUS = 3;
+export const MAX_COLUMN_WIDTH = 21 * LINE_HEIGHT;
 
 const BASE_COLORS = {
   BRAND: '#ff5722',
