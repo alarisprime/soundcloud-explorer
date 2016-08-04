@@ -4,7 +4,7 @@ import * as constants from '../constants';
 
 const Track = ({ track, togglePlay, isPlaying }) => {
   const style = {
-    padding: (constants.FONT_SIZE_PX / constants.GOLDEN_RATIO) + 'px',
+    padding: (constants.FONT_SIZE / constants.SIZING_RATIO) + 'px',
     fontWeight: isPlaying ? 'bold' : 'normal'
   };
 

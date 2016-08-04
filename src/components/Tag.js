@@ -8,12 +8,12 @@ const StyledLink = Radium(Link);
 
 const style = {
   backgroundColor: constants.COLORS.BRAND,
-  color: constants.COLORS.TEXT_INVERTED,
-  padding: constants.FONT_SIZE_PX / constants.GOLDEN_RATIO,
+  color: constants.COLORS.TEXT,
+  padding: constants.FONT_SIZE / constants.SIZING_RATIO,
 
-  ':hover': {
-    backgroundColor: constants.COLORS.BRAND_SECONDARY
-  }
+  // ':hover': {
+  //   backgroundColor: constants.COLORS.BRAND_SECONDARY
+  // }
 };
 
 const Tag = ({ text }) => (

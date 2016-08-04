@@ -9,11 +9,11 @@ const STYLE = {
   flexWrap: 'wrap'
 };
 
-const TAG_MARGIN = constants.FONT_SIZE_PX / (3 * constants.GOLDEN_RATIO);
+const TAG_MARGIN = constants.FONT_SIZE / (3 * constants.SIZING_RATIO);
 
 const TAG_CLOUD_STYLE = {
   margin: TAG_MARGIN,
-  lineHeight: constants.LINE_HEIGHT * constants.GOLDEN_RATIO
+  // lineHeight: constants.LINE_HEIGHT * constants.SIZING_RATIO
 };
 
 const TagCloud = ({ tags }) => (

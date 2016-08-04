@@ -12,7 +12,11 @@ const STYLE = {
 
 const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next, previous, isPaused }) => (
   <div style={STYLE}>
-    <TopBar genre={genre} />
+    <TopBar
+      title={genre}
+      leftButton="Back"
+      leftButtonTo="/"
+      />
     <AlbumArt track={tracks[nowPlaying]} />
     <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} isPaused={isPaused} />
     <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} loading={loading} />

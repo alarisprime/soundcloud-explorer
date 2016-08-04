@@ -14,9 +14,9 @@ const STYLE = {
 };
 
 const BUTTON_STYLE = {
-  color: constants.COLORS.TEXT_INVERTED,
-  fontSize: constants.FONT_SIZE_PX,
-  padding: (constants.FONT_SIZE_PX / constants.GOLDEN_RATIO) + 'px'
+  color: constants.COLORS.TEXT,
+  fontSize: constants.FONT_SIZE,
+  padding: (constants.FONT_SIZE / constants.SIZING_RATIO) + 'px'
 };
 
 const ControlBar = ({ togglePlay, previous, next, isPaused }) => (
