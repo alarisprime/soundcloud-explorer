@@ -1,9 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import { Link } from 'react-router';
-import SvgIcon from './SvgIcon';
 import * as constants from '../constants';
-import back from '../icons/back.svg';
 
 // eslint-disable-next-line new-cap
 const StyledLink = Radium(Link);
@@ -24,11 +22,6 @@ const LINK_STYLE = {
   textAlign: 'left',
   color: constants.COLORS.TEXT_INVERTED,
   display: 'flex'
-};
-
-const ICON_STYLE = {
-  filter: 'invert(100%)',
-  height: constants.FONT_SIZE_PX * constants.GOLDEN_RATIO
 };
 
 const TopBar = ({ genre }) => (
