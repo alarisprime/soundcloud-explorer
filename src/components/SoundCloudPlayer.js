@@ -2,8 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import TopBar from './TopBar';
 import TrackList from './TrackList';
-import ControlBar from './ControlBar';
-import AlbumArt from './AlbumArt';
+import Player from './Player';
 import Column from './Column';
 
 const STYLE = {
@@ -19,8 +18,12 @@ const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next
       leftButtonTo="/"
       />
     <Column>
-      <AlbumArt track={tracks[nowPlaying]} />
-      <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} isPaused={isPaused} />
+      <Player
+        track={tracks[nowPlaying]}
+        togglePlay={() => togglePlay(nowPlaying)}
+        next={next}
+        previous={previous}
+        isPaused={isPaused}/>
       <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} loading={loading} />
     </Column>
   </div>

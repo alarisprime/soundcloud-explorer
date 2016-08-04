@@ -6,7 +6,7 @@ const ALBUM_ART_SIZE = constants.LINE_HEIGHT * 4;
 
 const Track = ({ track, onClick, isPlaying, isLast }) => {
   const style = {
-    padding: `${constants.LINE_HEIGHT / 2}px 0`,
+    padding: `${constants.LINE_HEIGHT / 2}px`,
     borderBottom: isLast ? undefined : constants.BASE_BORDER,
     cursor: onClick ? 'pointer' : undefined,
     overflow: 'hidden'
@@ -47,11 +47,14 @@ const Track = ({ track, onClick, isPlaying, isLast }) => {
   return (
     <div style={style} onClick={onClick}>
       <div style={imageHolderStyles}>
-        <img className="cover" src={track.artwork_url} alt={track.description} />
+        {track && track.artwork_url ?
+          (<img className="cover" src={track.artwork_url} alt={track.description} />) : undefined}
       </div>
       <div style={infoHolderStyles}>
-        <h2 style={titleStyles}>{track.title}</h2>
-        <h3 style={artistStyles}>{track.user.username}</h3>
+        {track && track.title ?
+          (<h2 style={titleStyles}>{track.title}</h2>) : undefined }
+        {track && track.user && track.user.username ?
+          (<h3 style={artistStyles}>{track.user.username}</h3>) : undefined }
       </div>
     </div>
   );
