@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import Track from './Track';
 
 const STYLE = {
   listStyle: 'none',
@@ -10,12 +11,7 @@ const STYLE = {
 const TrackList = ({ tracks, nowPlaying, togglePlay }) => (
   <ul style={STYLE}>
     {tracks.map((track, index) =>
-      <li style={{fontWeight: index === nowPlaying ? 'bold' : 'normal'}}
-          onClick={() => togglePlay(index)}
-          key={index}
-      >
-        {track.title}
-      </li>
+      <Track track={track} isPlaying={index === nowPlaying}  onClick={() => togglePlay(index)} key={index} />
     )}
   </ul>
 );

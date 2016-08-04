@@ -3,6 +3,7 @@ import Radium from 'radium';
 import TopBar from './TopBar';
 import TrackList from './TrackList';
 import ControlBar from './ControlBar';
+import AlbumArt from './AlbumArt';
 
 const STYLE = {
   display: 'flex',
@@ -12,7 +13,7 @@ const STYLE = {
 const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next, previous, isPaused }) => (
   <div style={STYLE}>
     <TopBar genre={genre} />
-    {nowPlaying === -1 ? <div>placeholder</div> : <img src={tracks[nowPlaying].artwork_url} alt={tracks[nowPlaying].description}/>}
+    <AlbumArt track={tracks[nowPlaying]} />
     <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} isPaused={isPaused} />
     <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} />
   </div>
