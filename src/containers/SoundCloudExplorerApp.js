@@ -10,6 +10,7 @@ const DOCUMENT_STYLE = {
   padding: 0,
   height: '100%',
   boxSizing: 'border-box',
+  backgroundColor: constants.COLORS.GREY_LIGHTER,
   a: {
     textDecoration: 'none'
   }
