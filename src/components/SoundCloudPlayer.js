@@ -9,11 +9,11 @@ const STYLE = {
   flexDirection: 'column'
 };
 
-const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next, previous }) => (
+const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next, previous, isPaused }) => (
   <div style={STYLE}>
     <TopBar genre={genre} />
     {nowPlaying === -1 ? <div>placeholder</div> : <img src={tracks[nowPlaying].artwork_url} alt={tracks[nowPlaying].description}/>}
-    <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} />
+    <ControlBar togglePlay={() => togglePlay(nowPlaying)} next={next} previous={previous} isPaused={isPaused} />
     <TrackList tracks={tracks} nowPlaying={nowPlaying} togglePlay={togglePlay} />
   </div>
 );

@@ -4,8 +4,8 @@ export const LINE_HEIGHT = 1.5;
 export const GOLDEN_RATIO = 1.618;
 
 export const COLORS = {
-  BRAND: 'rgb(20, 155, 88)',
-  BRAND_SECONDARY: 'rgb(118, 207, 169)',
+  BRAND: 'rgb(140, 140, 140)',
+  BRAND_SECONDARY: 'rgb(205, 205, 205)',
   TEXT_INVERTED: 'rgb(255, 255, 255)'
 };
 

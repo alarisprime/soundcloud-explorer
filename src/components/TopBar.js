@@ -9,7 +9,7 @@ const StyledLink = Radium(Link);
 const STYLE = {
   backgroundColor: constants.COLORS.BRAND,
   color: constants.COLORS.TEXT_INVERTED,
-  padding: constants.FONT_SIZE_PX / constants.GOLDEN_RATIO,
+  padding: (constants.FONT_SIZE_PX / constants.GOLDEN_RATIO) + 'px',
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr'
 };
@@ -27,7 +27,7 @@ const LINK_STYLE = {
 const TopBar = ({ genre }) => (
   <div style={STYLE}>
     <StyledLink to="/" style={LINK_STYLE}>
-      <span>home</span>
+      <span>&lt; home</span>
     </StyledLink>
     <span style={GENRE_STYLE}>{genre}</span>
   </div>

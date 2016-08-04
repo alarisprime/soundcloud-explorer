@@ -10,7 +10,8 @@ class SoundCloudPlayerContainer extends Component {
     this.state = {
       loading: false,
       tracks: [],
-      nowPlaying: -1
+      nowPlaying: -1,
+      isPaused: true
     };
 
     // eslint-disable-next-line no-undef
@@ -24,11 +25,20 @@ class SoundCloudPlayerContainer extends Component {
   }
 
   togglePlay(index) {
-    const trackToPlay = this.state.tracks[index];
+    const indexToPlay = index === -1 ? 0 : index;
+    const trackToPlay = this.state.tracks[indexToPlay];
 
     // If the track is already playing, pause it.
-    if (this.state.nowPlaying === index) {
-      return trackToPlay.howl.playing() ? trackToPlay.howl.pause() : trackToPlay.howl.play();
+    if (this.state.nowPlaying === indexToPlay) {
+      if (trackToPlay.howl.playing()) {
+        trackToPlay.howl.pause();
+        this.setState({ isPaused: true });
+      } else {
+        trackToPlay.howl.play();
+        this.setState({ isPaused: false });
+      }
+
+      return;
     }
 
     // If the track is not playing, first check to see if there's a Howl object attached to it.
@@ -44,12 +54,15 @@ class SoundCloudPlayerContainer extends Component {
     const currentlyPlayingTrack = this.state.nowPlaying === -1 ? null : this.state.tracks[this.state.nowPlaying];
     if (currentlyPlayingTrack) {
       currentlyPlayingTrack.howl.stop();
+      this.setState({ isPaused: true });
     }
 
     // Play the track and add an event handler that updates the state as soon as the track
     // starts playing.
     trackToPlay.howl.play();
-    trackToPlay.howl.on('play', () => this.setState({ nowPlaying: index }));
+    trackToPlay.howl.on('play', () => {
+      this.setState({ nowPlaying: indexToPlay, isPaused: false });
+    });
   }
 
   stop() {
@@ -95,6 +108,7 @@ class SoundCloudPlayerContainer extends Component {
       togglePlay={this.togglePlay}
       next={this.next}
       previous={this.previous}
+      isPaused={this.state.isPaused}
     />;
   }
 }
