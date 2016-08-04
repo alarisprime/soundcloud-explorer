@@ -17,4 +17,5 @@ const ControlBar = ({ togglePlay, previous, next }) => (
   </div>
 );
 
+// eslint-disable-next-line new-cap
 export default Radium(ControlBar);

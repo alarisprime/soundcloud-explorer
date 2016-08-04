@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import * as constants from '../constants';
 import back from '../icons/back.svg';
 
+// eslint-disable-next-line new-cap
 const StyledLink = Radium(Link);
 
 const STYLE = {
@@ -39,4 +40,5 @@ const TopBar = ({ genre }) => (
   </div>
 );
 
+// eslint-disable-next-line new-cap
 export default Radium(TopBar);

@@ -13,6 +13,7 @@ class SoundCloudPlayerContainer extends Component {
       nowPlaying: -1
     };
 
+    // eslint-disable-next-line no-undef
     SC.initialize({
       client_id: constants.SOUNDCLOUD_CLIENT_ID
     });
@@ -27,8 +28,7 @@ class SoundCloudPlayerContainer extends Component {
 
     // If the track is already playing, pause it.
     if (this.state.nowPlaying === index) {
-      trackToPlay.howl.playing() ? trackToPlay.howl.pause() : trackToPlay.howl.play();
-      return;
+      return trackToPlay.howl.playing() ? trackToPlay.howl.pause() : trackToPlay.howl.play();
     }
 
     // If the track is not playing, first check to see if there's a Howl object attached to it.
@@ -72,6 +72,7 @@ class SoundCloudPlayerContainer extends Component {
   componentDidMount() {
     this.setState({ loading: true });
 
+    // eslint-disable-next-line no-undef
     SC.get('/tracks', {
       genres: this.props.params.genre
     })

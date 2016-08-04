@@ -18,4 +18,5 @@ const SoundCloudPlayer = ({ genre, loading, tracks, nowPlaying, togglePlay, next
   </div>
 );
 
+// eslint-disable-next-line new-cap
 export default Radium(SoundCloudPlayer);

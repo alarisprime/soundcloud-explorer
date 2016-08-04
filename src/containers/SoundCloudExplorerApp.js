@@ -25,4 +25,5 @@ class SoundCloudExplorerApp extends Component {
   }
 }
 
+// eslint-disable-next-line new-cap
 export default Radium(SoundCloudExplorerApp);

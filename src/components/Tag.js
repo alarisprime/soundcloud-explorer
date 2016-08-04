@@ -3,6 +3,7 @@ import Radium from 'radium';
 import { Link } from 'react-router';
 import * as constants from '../constants';
 
+// eslint-disable-next-line new-cap
 const StyledLink = Radium(Link);
 
 const style = {
@@ -19,4 +20,5 @@ const Tag = ({ text }) => (
   <StyledLink to={`/play/${text}`} style={style}>{text}</StyledLink>
 );
 
+// eslint-disable-next-line new-cap
 export default Radium(Tag);
