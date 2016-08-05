@@ -3,27 +3,56 @@ import Radium from 'radium';
 import * as constants from '../constants';
 
 const STYLE = {
-  backgroundColor: constants.COLORS.BRAND,
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'nowrap',
-  justifyContent: 'center',
-  '.button': {
-    fontSize: '100px'
-  }
+  alignContent: 'stretch'
 };
 
 const BUTTON_STYLE = {
-  color: constants.COLORS.TEXT_INVERTED,
-  fontSize: constants.FONT_SIZE_PX,
-  padding: (constants.FONT_SIZE_PX / constants.GOLDEN_RATIO) + 'px'
+  display: 'block',
+  flexGrow: 1,
+  padding: (constants.LINE_HEIGHT / 2) + 'px',
+  fontWeight: 'bold',
+  color: constants.COLORS.BRAND,
+  textTransform: 'uppercase',
+  outline: 'none', // To remove blue outline on Webkit
+  borderRight: constants.BASE_BORDER,
+  width: `${100 / 3}%`,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
+  cursor: 'pointer',
+
+  ':hover': {
+    color: constants.COLORS.BRAND_HOVER
+  },
+  ':active': {
+    color: constants.COLORS.BRAND_HOVER
+  },
+  ':focus': {
+    color: constants.COLORS.BRAND_HOVER
+  }
+};
+
+const LAST_BUTTON_STYLE = {
+  borderRightWidth: 0
 };
 
 const ControlBar = ({ togglePlay, previous, next, isPaused }) => (
   <div style={STYLE}>
-    <button style={BUTTON_STYLE} onClick={previous}>&lt;&lt; prev</button>
-    <button style={BUTTON_STYLE} onClick={togglePlay}>{isPaused ? 'play' : 'pause'}</button>
-    <button style={BUTTON_STYLE} onClick={next}>next &gt;&gt;</button>
+    <button
+      style={BUTTON_STYLE}
+      key="control-bar-prev"
+      onClick={previous}>Previous</button>
+    <button
+      style={BUTTON_STYLE}
+      key="control-bar-toggle-play"
+      onClick={togglePlay}>{isPaused ? 'Play' : 'Pause'}</button>
+    <button
+      key="control-bar-next"
+      style={[BUTTON_STYLE, LAST_BUTTON_STYLE]}
+      onClick={next}>Next</button>
   </div>
 );
 

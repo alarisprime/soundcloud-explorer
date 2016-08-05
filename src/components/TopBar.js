@@ -7,29 +7,42 @@ import * as constants from '../constants';
 const StyledLink = Radium(Link);
 
 const STYLE = {
+  marginBottom: `${constants.LINE_HEIGHT}px`,
   backgroundColor: constants.COLORS.BRAND,
-  color: constants.COLORS.TEXT_INVERTED,
-  padding: (constants.FONT_SIZE_PX / constants.GOLDEN_RATIO) + 'px',
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr 1fr'
+  color: constants.COLORS.TEXT_REVERSE,
+  boxShadow: constants.BASE_SHADOW
 };
 
-const GENRE_STYLE = {
-  textAlign: 'center'
+const TITLE_STYLE = {
+  textAlign: 'center',
+  width: '100%',
+  padding: `0 ${ 3 * constants.LINE_HEIGHT}px`,
+  position: 'relative',
+  fontWeight: 'bold',
+  lineHeight: `${2 * constants.LINE_HEIGHT}px`
 };
 
-const LINK_STYLE = {
-  textAlign: 'left',
-  color: constants.COLORS.TEXT_INVERTED,
-  display: 'flex'
+const LINK_BASE_STYLE = {
+  position: 'absolute',
+  top: 0,
+  display: 'block',
+  color: constants.COLORS.TEXT_REVERSE,
+  lineHeight: `${2 * constants.LINE_HEIGHT}px`,
+  padding: `0 ${constants.LINE_HEIGHT / 2}px`
 };
 
-const TopBar = ({ genre }) => (
+const LEFT_LINK_BASE_STYLE = {
+  left: 0
+}
+
+const TopBar = ({ title, leftButton, leftButtonTo }) => (
   <div style={STYLE}>
-    <StyledLink to="/" style={LINK_STYLE}>
-      <span>&lt; home</span>
-    </StyledLink>
-    <span style={GENRE_STYLE}>{genre}</span>
+    <div style={TITLE_STYLE}>{title ? title : ' '}</div>
+    {leftButton ? (
+      <StyledLink to={leftButtonTo} style={[LINK_BASE_STYLE, LEFT_LINK_BASE_STYLE]}>
+        {leftButton}
+      </StyledLink>
+    ) : undefined }
   </div>
 );
 
