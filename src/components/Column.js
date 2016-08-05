@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import * as constants from '../constants';
 
-const style = {
+const STYLE = {
   paddingRight: `${constants.LINE_HEIGHT / 2}px`,
   paddingLeft: `${constants.LINE_HEIGHT / 2}px`,
   width: `100%`,
@@ -11,7 +11,7 @@ const style = {
 };
 
 const Column = ({ children }) => (
-  <div style={style}>
+  <div style={STYLE}>
     {children}
   </div>
 );

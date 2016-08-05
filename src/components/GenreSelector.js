@@ -3,8 +3,10 @@ import TagCloud from '../components/TagCloud';
 import TopBar from './TopBar';
 import Column from './Column';
 
-const GENRES = ['hip-hop', 'funk', 'grime', 'pop', 'indie', 'garage', 'punk', 'electronic', 'metal', 'emo', 'jazz', 'r&b'];
-
+const GENRES = [
+  'hip-hop', 'funk', 'grime', 'pop', 'indie', 'garage', 'punk', 'electronic', 'metal', 'emo', 'jazz', 'r&b', 'country',
+  'folk', 'house', 'dubstep', 'hardcore'
+];
 
 const GenreSelector = ({text}) => (
   <div>

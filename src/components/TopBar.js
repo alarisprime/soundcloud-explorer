@@ -33,7 +33,7 @@ const LINK_BASE_STYLE = {
 
 const LEFT_LINK_BASE_STYLE = {
   left: 0
-}
+};
 
 const TopBar = ({ title, leftButton, leftButtonTo }) => (
   <div style={STYLE}>

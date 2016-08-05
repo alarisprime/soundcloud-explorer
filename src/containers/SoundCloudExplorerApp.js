@@ -20,14 +20,14 @@ const BODY_STYLE = {
   margin: 0,
   padding: 0,
   height: '100%'
-}
+};
 
 class SoundCloudExplorerApp extends Component {
   render() {
     return (
       <div>
-        <Style scopeSelector="html" rules={DOCUMENT_STYLE}/>
-        <Style scopeSelector="body" rules={BODY_STYLE}/>
+        <Style scopeSelector="html" rules={DOCUMENT_STYLE} />
+        <Style scopeSelector="body" rules={BODY_STYLE} />
         {this.props.children}
       </div>
     );

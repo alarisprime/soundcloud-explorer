@@ -6,7 +6,7 @@ import * as constants from '../constants';
 // eslint-disable-next-line new-cap
 const StyledLink = Radium(Link);
 
-const style = {
+const STYLE = {
   display: 'inline-block',
   backgroundColor: constants.COLORS.BRAND,
   color: constants.COLORS.TEXT_REVERSE,
@@ -22,7 +22,7 @@ const style = {
 };
 
 const Tag = ({ text }) => (
-  <StyledLink to={`/play/${text}`} style={style}>{text}</StyledLink>
+  <StyledLink to={`/play/${text}`} style={STYLE}>{text}</StyledLink>
 );
 
 // eslint-disable-next-line new-cap

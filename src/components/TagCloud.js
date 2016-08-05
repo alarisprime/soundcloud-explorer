@@ -17,7 +17,7 @@ const TITLE_STYLE = {
   fontSize: constants.FONT_SIZE,
   fontWeight: 'bold',
   margin: `0 0 ${constants.LINE_HEIGHT / 2}px 0`
-}
+};
 
 const TagCloud = ({ title, tags }) => (
   <div style={STYLE}>
